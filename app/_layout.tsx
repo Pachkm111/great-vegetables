@@ -34,8 +34,6 @@ export default function RootLayout() {
             <RegionProvider>
                 <Stack>
                     <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
-                    {/* <Stack.Screen name="[category]/sorta/index" options={{ title: 'Выберите сорт' }}/>
-                    <Stack.Screen name="[category]/sorta/[name]" options={{ title: 'Информация' }}/> */}
                     <Stack.Screen name="+not-found" />
                 </Stack>
                 <StatusBar style="auto" />
