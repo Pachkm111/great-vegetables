@@ -1,0 +1,1 @@
+export const serverLink = 'http://5.35.95.153:3000';
