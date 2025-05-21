@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, Modal, FlatList, TouchableOpacity, Linking } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import { useRegion } from '@/hooks/RegionContext';
-import { REGION_NAMES } from '@/constants/RegionNames'
-
+import { REGION_NAMES } from '@/constants/RegionNames';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 

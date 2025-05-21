@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "great-vegetables",
+    "name": "Сад-огород",
     "slug": "great-vegetables",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -32,6 +32,13 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#000000"
+        }
+      ],
+      [
+        "expo-build-properties", {
+          "android": {
+            "usesCleartextTraffic": true
+          }
         }
       ]
     ],

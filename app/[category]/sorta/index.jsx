@@ -21,7 +21,11 @@ const CategoryPage = () => {
                 table: 'groups',
                 page_path: `/${category}/sorta/`,
             });
-            const group = await fetch(`${serverLink}/api?${params.toString()}`)
+            const group = await fetch(`${serverLink}/api?${params.toString()}`, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Ошибка HTTP: ${response.status}`);
@@ -41,7 +45,11 @@ const CategoryPage = () => {
                 table: 'vegetable-groups',
                 group_id: group.id,
             });
-            const groupVegetables = await fetch(`${serverLink}/api?${params.toString()}`)
+            const groupVegetables = await fetch(`${serverLink}/api?${params.toString()}`, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
             .then(response => {
                 if (!response.ok) {
                 throw new Error(`Ошибка HTTP: ${response.status}`);
@@ -63,7 +71,11 @@ const CategoryPage = () => {
                         id: veg.id,
                     });
 
-                    return fetch(`${serverLink}/api?${params.toString()}`)
+                    return fetch(`${serverLink}/api?${params.toString()}`, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
                     .then((response) => {
                         if (!response.ok) {
                             throw new Error(`Ошибка HTTP: ${response.status}`);

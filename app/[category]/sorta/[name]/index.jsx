@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
-import { Stack, Link, useLocalSearchParams  } from 'expo-router';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import { Stack, useLocalSearchParams  } from 'expo-router';
 import { serverLink } from '@/config';
 
 const NamePage = () => {
@@ -19,14 +19,22 @@ const NamePage = () => {
             });
 
             try {
-                const response = await fetch(`${serverLink}/api?${params.toString()}`);
+                const response = await fetch(`${serverLink}/api?${params.toString()}`, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
                 if (!response.ok) {
                     throw new Error(`Ошибка HTTP: ${response.status}`);
                 }
                 const data = await response.json();
                 setItem(data[0]);
 
-                const descResponse = await fetch(`${serverLink}/text${encodeURIComponent(data[0].desc_path)}`);
+                const descResponse = await fetch(`${serverLink}/text${encodeURIComponent(data[0].desc_path)}`, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
                 if (!descResponse.ok) {
                     throw new Error(`HTTP error! Status: ${descResponse.status}`);
                 }
